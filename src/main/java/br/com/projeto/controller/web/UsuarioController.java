@@ -14,8 +14,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -26,6 +29,8 @@ public class UsuarioController {
 
     @Autowired
     private TipoUsuarioRepository tipoUsuarioRepository;
+
+    //public List<UsuarioEntity> enviarListaUsuario
 
     @GetMapping("/usuario")
     public String crudUsuario(Model model) {
@@ -63,4 +68,12 @@ public class UsuarioController {
         usuarioRepository.save(new UsuarioEntity(usuarioModel));
         return "redirect:/usuario";
     }
+
+    @GetMapping("/removerUsuario/")
+    @Transactional
+    public String removerUsuario(Long id) {
+        usuarioRepository.deleteAllById(Collections.singleton(id));
+        return "redirect:/usuario";
+    }
+
 }

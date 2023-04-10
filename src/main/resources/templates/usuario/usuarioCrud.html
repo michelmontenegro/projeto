@@ -55,6 +55,7 @@ td {
         <th scope="col">Tipo</th>
         <th scope="col">Número</th>
         <th scope="col">CEP</th>
+        <th scope="col">Remover</th>
     </tr>
 </tr>
 </thead>
@@ -69,7 +70,7 @@ td {
         <td th:text="${usr.tipo.nome}"></td>
         <td th:text="${usr.endereco.numero}"></td>
         <td th:text="${usr.endereco.cep}"></td>
-
+        <td><a th:href="@{'/removerUsuario/?id=' + ${usr.id}}">remove</a></td>
     </tr>
 </tbody>
 </table>
