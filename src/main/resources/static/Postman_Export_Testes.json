@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "b48a9c01-4b7b-4ad3-bc85-0567e5434dba",
+		"name": "Projeto - LocalHost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26829433"
+	},
+	"item": [
+		{
+			"name": "Web",
+			"item": [
+				{
+					"name": "Pagina inicial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rest",
+			"item": [
+				{
+					"name": "POST - Inserir",
+					"item": [
+						{
+							"name": "POST - Inserir 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"id\": 1,\r\n        \"nome\": \"Usuario Teste\",\r\n        \"email\": \"UsuarioTeste@gmail.com\",\r\n        \"senha\": \"Teste+123\",\r\n        \"tipo\": {\r\n            \"id\": 1\r\n        },\r\n        \"data\": \"24-04-1979\",\r\n        \"endereco\": {\r\n            \"numero\": 458,\r\n            \"logradouro\": \"PASSAGEM\",\r\n            \"cep\": \"55899452\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Rest/Usuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Rest",
+										"Usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Inserir 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"nome\": \"Usuario Teste3\",\r\n        \"email\": \"UsuarioTeste3@gmail.com\",\r\n        \"senha\": \"Teste+123\",\r\n        \"tipo\": {\r\n            \"id\": 2\r\n        },\r\n        \"data\": \"24-04-1979\",\r\n        \"endereco\": {\r\n            \"numero\": 878,\r\n            \"logradouro\": \"AVENIDA\",\r\n            \"cep\": \"55899896\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Rest/Usuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Rest",
+										"Usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Inserir 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\r\n        \"nome\": \"Usuario Teste4\",\r\n        \"email\": \"UsuarioTeste4@gmail.com\",\r\n        \"senha\": \"Teste+123\",\r\n        \"tipo\": {\r\n            \"id\": 1\r\n        },\r\n        \"data\": \"24-04-1980\",\r\n        \"endereco\": {\r\n            \"numero\": 221,\r\n            \"logradouro\": \"RUA\",\r\n            \"cep\": \"63399854\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/Rest/Usuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Rest",
+										"Usuario"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET - Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Rest/Consultar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Consultar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT - Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n       \"id\": \"1\",\r\n        \"nome\": \"Primeiro Usuario Alterado\",\r\n        \"email\": \"primeiro.Usuario@gmail.com\",\r\n        \"senha\": \"Nova123\",\r\n        \"tipo\": {\r\n            \"id\": 1\r\n        },\r\n        \"data\": \"03-03-2000\",\r\n        \"endereco\": {\r\n            \"numero\": 248,\r\n            \"logradouro\": \"RUA\",\r\n            \"cep\": \"12345678\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE - Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n       \"id\": \"1\"\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
