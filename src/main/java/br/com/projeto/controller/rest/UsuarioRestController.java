@@ -42,6 +42,16 @@ public class UsuarioRestController {
         usuarioRepository.save(new UsuarioEntity(usuarioDTO));
     }
 
+    @PutMapping
+    @Transactional
+    public void editar(@RequestBody @Valid UsuarioDTO usuarioDTO) {
+        usuarioRepository.save(new UsuarioEntity(usuarioDTO));
+    }
 
+    @DeleteMapping
+    @Transactional
+    public void remover(Long id) {
+        usuarioRepository.deleteById(id);
+    }
 
 }
