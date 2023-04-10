@@ -1,5 +1,6 @@
 package br.com.projeto.model.usuario.dto;
 
+import br.com.projeto.model.usuario.entity.TipoUsuarioEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -20,5 +21,9 @@ public class TipoUsuarioDTO{
 
     @NotBlank(message = "Campo em Branco")
     String nome;
+
+    TipoUsuarioDTO (TipoUsuarioEntity tipoUsuarioEntity){
+        this(tipoUsuarioEntity.getId(),tipoUsuarioEntity.getNome());
+    }
 
 }
