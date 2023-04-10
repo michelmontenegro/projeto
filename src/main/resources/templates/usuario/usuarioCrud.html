@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Getting Started: Serving Web Content</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <style type="text/css">
+thead,
+tfoot {
+    background-color: #3f87a6;
+    color: #fff;
+}
+
+tbody {
+    background-color: #e4f0f5;
+}
+
+caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+}
+
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+}
+
+td {
+    text-align: center;
+}
+        </style>
+
+
+
+    </head>
+<body>
+<hl>Demostrativo CRUD - SpringBoot/Thymleaf</hl>
+<br>
+<br>
+<table/>
+    <caption>Dados do Usuario</caption>
+<thead>
+<tr>
+    <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Senha</th>
+        <th scope="col">Ativo</th>
+        <th scope="col">Data</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Número</th>
+        <th scope="col">CEP</th>
+    </tr>
+</tr>
+</thead>
+<tbody color="e4f0f5">
+    <tr th:each="usr: ${listaUsuariosModel}">
+        <td th:text="${usr.id}"></td>
+        <td th:text="${usr.nome}"></td>
+        <td th:text="${usr.email}"></td>
+        <td th:text="${usr.senha}"></td>
+        <td th:text="${usr.ativo}"></td>
+        <td th:text="${usr.data}"></td>
+        <td th:text="${usr.tipo.nome}"></td>
+        <td th:text="${usr.endereco.numero}"></td>
+        <td th:text="${usr.endereco.cep}"></td>
+
+    </tr>
+</tbody>
+</table>
+<br>
+================================================
+<br>
+<form th:action="@{/inserirUsuario}" th:object="${usuarioModel}" method="post" class="form">
+    <input class="btn btn-success" type="submit" value="Inserir Usuario">
+    <input type="hidden" id="ativo" name="ativo" value="1" />
+<table/>
+<tbody color="e4f0f5">
+<tr>
+    <td> <label for="nome">Nome: </label></td>
+    <td> <input class="form-control" id="nome" placeholder="Digite o seu Nome" autocomplete="off" type="text" th:field="*{nome}"/></td>
+</tr>
+<tr>
+    <td> <label for="email">E-Mail: </label></td>
+    <td> <input class="form-control" id="email" placeholder="Digite seu email" autocomplete="off" type="text" th:field="*{email}"/></td>
+</tr>
+<tr>
+    <td> <label for="cep">CEP: </label> </td>
+    <td> <input class="form-control" id="cep" placeholder="Somente Números" autocomplete="off" type="number" th:field="*{endereco.cep}"/> </td>
+</tr>
+<tr>
+    <td><label for="numero">Número: </label></td>
+    <td><input class="form-control" id="numero" placeholder="Somente Números" autocomplete="off" type="number" th:field="*{endereco.numero}"/></td>
+</tr>
+<tr>
+    <td><label for="data">Data: </label></td>
+    <td><input class="form-control" id="data" placeholder="Digite a Data" autocomplete="off" type="date" th:field="*{data}"/></td>
+</tr>
+<tr>
+    <td> <label for="senha">senha</label></td>
+    <td> <input class="form-control" id="senha" placeholder="Digite sua Senha" autocomplete="off"  type="text" th:field="*{senha}"/></td>
+</tr>
+<tr>
+    <td>    <label for="nome">Logradouros</label></td>
+    <td>  <div th:each="ty : ${tiposLogradouros}">
+        <input type="radio" th:field="*{endereco.logradouro}" th:value="${ty}" />
+            <label th:for="${#ids.prev('endereco.logradouro')}" th:text="${ty}"></label>
+        </div></td>
+</tr>
+<tr>
+    <td><label for="tipo">Tipo Usuario:</label></td>
+    <td><select id="tipo" th:field="*{tipo.id}">
+            <option value="" >Selecione um Tipo</option>
+            <option th:each="tiposUsuario : ${tiposUsuarioModel}"
+                    th:value="${tiposUsuario.id}" th:text="${tiposUsuario.nome}"></option>
+        </select></td>
+</tr>
+</form>
+
+</body>
+</html>
