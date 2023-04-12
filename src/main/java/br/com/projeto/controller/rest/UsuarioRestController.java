@@ -31,7 +31,7 @@ public class UsuarioRestController {
     private TipoUsuarioRepository tipoUsuarioRepository;
 
     @GetMapping
-    public List<UsuarioDTO> consultar(Long id) {
+        public List<UsuarioDTO> consultar() {
         List<UsuarioEntity> listaUsuario = usuarioRepository.findAll();
         return listaUsuario.stream().map(UsuarioDTO::new).toList();
     }
