@@ -19,7 +19,6 @@ import javax.sql.DataSource;
 @Configuration
 @Profile("dev")
 public class ConfigurationDev {
-
     @Bean
     public DataSource dataSource()
     {
@@ -30,7 +29,6 @@ public class ConfigurationDev {
         dataSourceBuilder.password("password");
         return dataSourceBuilder.build();
     }
-
     @Bean
     public JpaVendorAdapter jpaVendorAdapter()
     {
@@ -42,5 +40,4 @@ public class ConfigurationDev {
         adapter.setPrepareConnection(true);
         return adapter;
     }
-
 }
