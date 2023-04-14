@@ -150,7 +150,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/Rest/Consultar",
+							"raw": "http://localhost:8080/Rest/Usuario",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -158,7 +158,7 @@
 							"port": "8080",
 							"path": [
 								"Rest",
-								"Consultar"
+								"Usuario"
 							]
 						}
 					},
@@ -217,6 +217,43 @@
 							"path": [
 								"Rest",
 								"Usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rest XML",
+			"item": [
+				{
+					"name": "GET - Consultar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario/XML",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario",
+								"XML"
 							]
 						}
 					},
