@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -25,4 +26,18 @@ public class UsuarioRestXMLController {
         List<UsuarioEntity> listaUsuario = usuarioRepository.findAll();
         return listaUsuario.stream().map(UsuarioDTO::new).toList();
     }
+
+    @GetMapping(produces= {MediaType.APPLICATION_XML_VALUE})
+    @RequestMapping("idUsuario")
+    public UsuarioDTO consultarById(Long id) {
+        Optional<UsuarioEntity> usuarioEntity = usuarioRepository.findById(id);
+        return new UsuarioDTO(usuarioEntity.get());
+    }
+
+    @PostMapping(consumes= {MediaType.APPLICATION_XML_VALUE})
+    @Transactional
+    public void inserir(@RequestBody @Valid UsuarioDTO usuarioDTO) {
+        usuarioRepository.save(new UsuarioEntity(usuarioDTO));
+    }
+
 }
