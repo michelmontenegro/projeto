@@ -260,6 +260,42 @@
 					"response": []
 				},
 				{
+					"name": "POST - Editar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " <Usuario ativo=\"true\" data=\"07-07-3500\">\r\n    <tipo id=\"1\" nome=\"USUARIO\"/>\r\n    <endereco numero=\"888\" logradouro=\"PASSAGEM\" cep=\"87654321\"/>\r\n    <id>1</id>\r\n    <nome>Novo Usuario</nome>\r\n    <email>NovoUsuario@gmail.com</email>\r\n    <senha>TesteNovo</senha>\r\n</Usuario>"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario/XML",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario",
+								"XML"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "GET - Consultar ByID",
 					"request": {
 						"method": "GET",
@@ -293,42 +329,6 @@
 									"key": "id",
 									"value": "1"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "POST - Inserir",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/xml",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/xml",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": " <Usuario ativo=\"true\" data=\"07-07-3500\">\r\n    <tipo id=\"1\" nome=\"USUARIO\"/>\r\n    <endereco numero=\"888\" logradouro=\"PASSAGEM\" cep=\"87654321\"/>\r\n    <id>1</id>\r\n    <nome>Novo Usuario</nome>\r\n    <email>NovoUsuario@gmail.com</email>\r\n    <senha>TesteNovo</senha>\r\n</Usuario>"
-						},
-						"url": {
-							"raw": "http://localhost:8080/Rest/Usuario/XML",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"Rest",
-								"Usuario",
-								"XML"
 							]
 						}
 					},
