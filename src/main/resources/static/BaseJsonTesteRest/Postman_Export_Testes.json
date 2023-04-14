@@ -145,10 +145,19 @@
 					]
 				},
 				{
-					"name": "GET - Consultar",
+					"name": "PUT - Editar",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n       \"id\": \"1\",\r\n        \"nome\": \"Primeiro Usuario Alterado\",\r\n        \"email\": \"primeiro.Usuario@gmail.com\",\r\n        \"senha\": \"Nova123\",\r\n        \"tipo\": {\r\n            \"id\": 1\r\n        },\r\n        \"data\": \"03-03-2000\",\r\n        \"endereco\": {\r\n            \"numero\": 248,\r\n            \"logradouro\": \"RUA\",\r\n            \"cep\": \"12345678\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/Rest/Usuario",
 							"protocol": "http",
@@ -165,19 +174,10 @@
 					"response": []
 				},
 				{
-					"name": "PUT - Editar",
+					"name": "GET - Consultar",
 					"request": {
-						"method": "PUT",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "   {\r\n       \"id\": \"1\",\r\n        \"nome\": \"Primeiro Usuario Alterado\",\r\n        \"email\": \"primeiro.Usuario@gmail.com\",\r\n        \"senha\": \"Nova123\",\r\n        \"tipo\": {\r\n            \"id\": 1\r\n        },\r\n        \"data\": \"03-03-2000\",\r\n        \"endereco\": {\r\n            \"numero\": 248,\r\n            \"logradouro\": \"RUA\",\r\n            \"cep\": \"12345678\"\r\n        },\r\n        \"ativo\": true\r\n    }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://localhost:8080/Rest/Usuario",
 							"protocol": "http",
@@ -243,6 +243,81 @@
 								"type": "text"
 							}
 						],
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario/XML",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario",
+								"XML"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET - Consultar ByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/Rest/Usuario/XML/idUsuario?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Rest",
+								"Usuario",
+								"XML",
+								"idUsuario"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST - Inserir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " <Usuario ativo=\"true\" data=\"07-07-3500\">\r\n    <tipo id=\"1\" nome=\"USUARIO\"/>\r\n    <endereco numero=\"888\" logradouro=\"PASSAGEM\" cep=\"87654321\"/>\r\n    <id>1</id>\r\n    <nome>Novo Usuario</nome>\r\n    <email>NovoUsuario@gmail.com</email>\r\n    <senha>TesteNovo</senha>\r\n</Usuario>"
+						},
 						"url": {
 							"raw": "http://localhost:8080/Rest/Usuario/XML",
 							"protocol": "http",
