@@ -42,8 +42,8 @@ class UsuarioRestTest {
 		mockMvc.perform(MockMvcRequestBuilders
 						.put("/Rest/Usuario")
 						.content(asJsonString(new UsuarioDTO(null, "Nome do Usuario", "email@teste",
-								"Senha589", new TipoUsuarioDTO(1L, ""), LocalDate.now(),
-								new EnderecoUsuarioDTO(456, LogradouroEnum.RUA, "12345678"), true)))
+								"Senha589", true, LocalDate.now(), new TipoUsuarioDTO(1L, ""),
+								new EnderecoUsuarioDTO(456, LogradouroEnum.RUA, "12345678"))))
 						.contentType(MediaType.APPLICATION_JSON)
 						.accept(MediaType.APPLICATION_JSON))
 				.andDo(print())

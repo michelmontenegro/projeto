@@ -70,3 +70,4 @@ The following guides illustrate how to use some features concretely:
 * [Tutorial: Thymeleaf + Spring](https://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html)
 * [Spring and Thymeleaf 3: Expressions](https://www.baeldung.com/spring-thymeleaf-3-expressions)
 * [Thymeleaf - Reaproveitando código com fragments](https://www.treinaweb.com.br/blog/thymeleaf-reaproveitando-codigo-com-fragments)
+* [https://stackify.com/java-xml-jackson/](Solving the XML Problem with Jackson)
