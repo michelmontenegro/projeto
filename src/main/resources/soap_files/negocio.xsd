@@ -1,0 +1,32 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://localhost:8080/negocio"
+           xmlns:tns="http://localhost:8080/negocio"
+           elementFormDefault="qualified">
+
+    <xs:element name="postNegocioRequestPayload">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="operacao" type="xs:string" />
+                <xs:element name="iselicCedente" type="xs:string" />
+                <xs:element name="iselicCessionario" type="xs:string" />
+                <xs:element name="codigoTitulo" type="xs:string" />
+                <xs:element name="dataVencimento" type="xs:string" />
+                <xs:element name="precoUnitario" type="xs:string" />
+                <xs:element name="quantidadeTitulos" type="xs:string" />
+                <xs:element name="parte" type="xs:string" />
+                <xs:element name="dataLiquidacao" type="xs:string" />
+                <xs:element name="dataMovimento" type="xs:string" />
+                <xs:element name="departamento" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postNegocioResponsePayload">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

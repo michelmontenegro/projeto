@@ -17,10 +17,4 @@ public class OperacaoRestController {
         headers.put("Content-Type","application/json");
         return new OperacaoEnvioDTO();
     }
-
-    @GetMapping
-    @RequestMapping("/api/negocios2")
-    public void receber(@RequestBody @Valid UsuarioDTO usuarioDTO) {
-        System.out.println(usuarioDTO);
-    }
 }
