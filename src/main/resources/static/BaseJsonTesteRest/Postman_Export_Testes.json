@@ -335,6 +335,81 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Operacao",
+			"item": [
+				{
+					"name": "Operacao",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/negocios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"negocios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SOAP",
+			"item": [
+				{
+					"name": "Web Service - SOAP",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://localhost:8080/negocio\"> <soapenv:Header/> <soapenv:Body> <gs:postNegocioRequestPayload> <gs:operacao>4052</gs:operacao> <gs:iselicCedente>85858585</gs:iselicCedente> <gs:iselicCessionario>95959595</gs:iselicCessionario> <gs:codigoTitulo>760100</gs:codigoTitulo> <gs:dataVencimento>2023-03-15</gs:dataVencimento> <gs:precoUnitario>96301.745203</gs:precoUnitario> <gs:quantidadeTitulos>700</gs:quantidadeTitulos> <gs:parte>CESSIONARIO</gs:parte> <gs:dataLiquidacao>2021-06-27</gs:dataLiquidacao> <gs:dataMovimento>2021-06-25</gs:dataMovimento> <gs:departamento>00</gs:departamento> </gs:postNegocioRequestPayload> </soapenv:Body></soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ws",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ws"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
