@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 
@@ -31,7 +32,8 @@ public class UsuarioRestController {
     private TipoUsuarioRepository tipoUsuarioRepository;
 
     @GetMapping
-        public List<UsuarioDTO> consultar() {
+        public List<UsuarioDTO> consultar(@RequestHeader Map<String, String> headers) {
+        headers.put("Content-Type","application/json");
         List<UsuarioEntity> listaUsuario = usuarioRepository.findAll();
         return listaUsuario.stream().map(UsuarioDTO::new).toList();
     }
