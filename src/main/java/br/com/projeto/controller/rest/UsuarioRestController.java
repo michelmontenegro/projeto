@@ -32,8 +32,7 @@ public class UsuarioRestController {
     private TipoUsuarioRepository tipoUsuarioRepository;
 
     @GetMapping
-        public List<UsuarioDTO> consultar(@RequestHeader Map<String, String> headers) {
-        headers.put("Content-Type","application/json");
+        public List<UsuarioDTO> consultar() {
         List<UsuarioEntity> listaUsuario = usuarioRepository.findAll();
         return listaUsuario.stream().map(UsuarioDTO::new).toList();
     }
